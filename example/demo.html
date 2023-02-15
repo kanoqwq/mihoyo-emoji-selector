@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 将以下代码粘贴到需要添加表情包选择框的位置 -->
+    <div>
+        <script>
+            const commentElement = '#comment'
+            function receiveMsg(e) {
+                try {
+                    let data = e.data;
+                    if (data.emoUrl) {
+                        let comment = document.querySelector(commentElement);
+                        comment.value += " " + data.emoUrl;
+                    }
+                    if (data.frameHeight) {
+                        document.querySelector("#MiHoYoEmo").style.height = `${data.frameHeight}px`
+                    }
+                } catch (e) {
+                    console.log("发生错误！没有找到评论区位置");
+                }
+            }
+            window.addEventListener("message", receiveMsg)
+        </script>
+        <iframe src="https://api.kanokano.cn/MiHoYoEmo/" frameborder=0 scrolling="no" width="100%" id="MiHoYoEmo"
+            height="32px" style="transition:all .5s"></iframe>
+    </div>
+</body>
+
+</html>
