@@ -6,7 +6,7 @@
 - 点击表情包自动发送url到对应DOM对象
 - iframe框架隔离 + CORS，低冲突
 
-![demo](.\demo.gif)
+![demo](https://github.com/kanoqwq/mihoyo-emoji-selector/blob/main/demo.gif?raw=true)
 
 ## 免责声明
 
